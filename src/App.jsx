@@ -32,6 +32,60 @@ function App() {
     //Experiencia laborales
     experiencias:[]
   })
+  const guardarhojavida = async () => {
+    try{
+      const datosapi = {
+        nombre:persona.nombre,
+        edad:persona.edad,
+        ciudad:persona.ciudad,
+        correo:persona.correo,
+        programa:persona.programa,
+        ficha:persona.ficha,
+        jornada:persona.jornada,
+
+        //Cursos
+
+        nivel:persona.nivel,
+        titulo:persona.titulo,
+        cursos:persona.cursos,
+        institución:persona.institución,
+        anio:persona.anio,
+
+        //Experiencia laboral
+        Empresa:persona.Empresa,
+        Cargo:persona.Cargo,
+        Tiempo:persona.Tiempo,
+        funciones:persona.funciones,
+
+
+
+      };
+
+      const respuesta = await fetch("http://127.0.0.1:5000/api/registrohv",
+        {
+        method: "POST",
+        headers:{
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(datosapi),
+      });
+      const resultado = await respuesta.json();
+
+      console.log("Respuesta realizada", resultado);
+
+      if (!respuesta.ok) {
+        console.error("Error de Flask:", resultado);
+        return;
+  }
+   console.log("Registro guardado correctamente");
+
+    }catch(error){
+      console.error(
+        "error al conectar con flask",
+        error
+      );
+    }
+  };
 
   return (
     <>
@@ -64,8 +118,10 @@ function App() {
 
     {
       paso == 4 && <VistaPrevia
+      datos={persona}
       persona={persona}
       anterior={() => setPaso(3)}
+      guardarhojavida = {guardarhojavida}
       />
     }
     <Footer/>

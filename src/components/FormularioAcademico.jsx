@@ -34,7 +34,30 @@ function Academico({persona, setPersona, anterior, siguiente}){
     const continuar = (e) => {
 
         e.preventDefault();
-        alert("Datos academicos ingresados correctamente");
+        if(persona.nivel.trim() === ""){
+            alert("Ingrese el nivel de su formación")
+            return;
+        }
+
+        if(persona.titulo.trim() === ""){
+            alert("Ingrese su título obtenido")
+            return;
+        }
+
+        if(persona.cursos.length === 0){
+            alert("El campo no puede estar vacío")
+            return;
+        }
+        
+        if(persona.institución.trim() === ""){
+            alert("Ingrese el nombre de la institución educativa")
+            return;
+        }
+
+        if(persona.anio.trim() === ""){
+            alert("Ingrese el año de graduación")
+        }
+        
         if(siguiente){
             siguiente();
         }

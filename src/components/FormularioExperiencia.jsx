@@ -7,14 +7,23 @@ function Experiencia({ persona, setPersona, anterior, siguiente }) {
     const [funciones, setFunciones] = useState("");
 
     const agregarExperiencia = () => {
-        if(
-            empresa.trim() === "" ||
-            tiempo.trim() === "" ||
-            cargo.trim() === "" ||
-            funciones.trim() === ""
-        ){
-            alert("Complete todos los campos de la experiencia");
-            return
+        if(empresa.trim() === ""){
+            alert("Ingrese el nombre de la empresa")
+            return;
+        }
+        if(tiempo.trim() === ""){
+            alert("Ingrese el tiempo de experiencia")
+            return;
+        }
+
+        if(cargo.trim() === ""){
+            alert("Ingrese su cargo")
+            return;
+        }
+
+        if(funciones.trim() === ""){
+            alert("Ingrese las funciones desempeñadas")
+            return;
         }
         const nuevaExperiencia = {
             empresa: empresa,
@@ -39,9 +48,9 @@ function Experiencia({ persona, setPersona, anterior, siguiente }) {
     }
     const continuar = (e) => {
         e.preventDefault();
-        if (persona.experiencias.length === 0) {
+        if (persona.experiencias.length === 0){
             alert("Agregue al menos una experiencia laboral");
-            return
+            return;
         }
         alert("Datos de experiencia cargados correctamente");
         if (siguiente) {
@@ -108,7 +117,7 @@ function Experiencia({ persona, setPersona, anterior, siguiente }) {
                     ))}
                 </div>
             <button type="button" onClick={anterior}>← Anterior</button>
-            <button type="submit"> Finalizar →</button>
+            <button type="submit"> Confirmar registro →</button>
             </form>
         </div>
     )

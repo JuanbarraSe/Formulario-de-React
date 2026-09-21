@@ -1,12 +1,52 @@
-import { useState } from "react";
 function Formulario({persona, setPersona, siguiente}){
 
     const continuar = (e) => {
 
         e.preventDefault();
-        alert("Los datos fueron capturados correctamente");
+        if(persona.nombre.trim() === ""){
+            alert("Ingresar nombre completo")
+            return;
+        }
+
+        if(persona.ciudad.trim() === ""){
+            alert("Ingresar nombre de la ciudad")
+            return;
+        }
+
+        if(persona.edad.trim() ===  ""){
+            alert("Ingrese su edad")
+            return;
+        }
+
+        if(persona.edad < 1 || persona.edad >=100){
+            alert("Edad no válida")
+            return;
+        }
+
+        if(persona.programa.trim() === ""){
+            alert("Ingrese su programa de formación")
+        }
+
+        if(persona.correo.trim() === ""){
+            alert("Ingrese su correo")
+            return;
+        }
+        const excorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(!excorreo.test(persona.correo.trim())){
+            alert("Ingresar un correo electrónico válido")
+        }
+
+        if(persona.ficha.trim() === ""){
+            alert("Ingrese el número de ficha")
+        }
+
+        if(persona.jornada.trim() === ""){
+            alert("Ingrese su jornada")
+        }
+
         if(siguiente){
             siguiente();
+            alert("Los datos fueron capturados correctamente")
         }
     }
     return (
@@ -18,7 +58,14 @@ function Formulario({persona, setPersona, siguiente}){
                 <div className="Grupo">
                     <label>Fotografia</label>
                     <input type="file" accept="image/*"
-                    onChange={(e) => setPersona({...persona,foto:e.target.file[0]})}
+                    onChange={(e) => {
+                        const archivo = e.target.files[0]
+
+                        
+                        if(archivo){
+                            setPersona({...persona,foto:URL.createObjectURL(archivo)})
+                        }
+                    }}
                     />
                 </div>
 

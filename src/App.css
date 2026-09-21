@@ -87,18 +87,18 @@ button:hover {
     background-color: wheat;
 }
 
-footer {
+footer{
     text-align: center;
     margin-top: 15px;
     font-size: 16px;
 }
 
-.lista-cursos {
+.lista-cursos{
     margin-top: 20px;
     width: 100%;
 }
 
-.curso {
+.curso{
     background-color: white;
     color: black;
     padding: 15px;
@@ -112,11 +112,11 @@ footer {
     gap: 10px;
 }
 
-.curso span {
+.curso span{
     font-size: 16px;
 }
 
-.curso button {
+.curso button{
     width: auto;
     min-width: 120px;
     margin-top: 0;
@@ -124,16 +124,16 @@ footer {
     color: white;
 }
 
-.curso button:hover {
+.curso button:hover{
     background-color: rgb(4, 32, 115);
 }
 
-.lista-experiencias {
+.lista-experiencias{
     margin-top: 20px;
     width: 100%;
 }
 
-.experiencia-item {
+.experiencia-item{
     background-color: white;
     color: black;
     padding: 18px;
@@ -146,28 +146,28 @@ footer {
     gap: 8px;
 }
 
-.experiencia-item span {
+.experiencia-item span{
     display: block;
     font-size: 16px;
     line-height: 1.4;
 }
 
-.experiencia-item strong {
+.experiencia-item{
     color: rgb(6, 45, 162);
 }
 
-.experiencia-item button {
+.experiencia-item button{
     margin-top: 10px;
     background-color: rgb(6, 45, 162);
     color: white;
     width: 100%;
 }
 
-.experiencia-item button:hover {
+.experiencia-item button:hover{
     background-color: rgb(4, 32, 115);
 }
 
-.forumario h2 {
+.formulario h2{
     background-color: rgb(4, 32, 115);
     color: white;
     padding: 15px;
@@ -176,7 +176,7 @@ footer {
     margin-bottom: 30px;
 }
 
-.forumario h3 {
+.formulario h3{
     background-color: rgb(4, 32, 115);
     color: white;
     padding: 10px 15px;
@@ -185,7 +185,7 @@ footer {
     margin-bottom: 15px;
 }
 
-.forumario p {
+.formulario p{
     background-color: white;
     color: black;
     padding: 10px 15px;
@@ -194,11 +194,11 @@ footer {
     font-size: 16px;
 }
 
-.forumario p strong {
+.formulario p{
     color: rgb(6, 45, 162);
 }
 
-.forumario .detalle {
+.formulario .detalle{
     background-color: white;
     color: black;
     padding: 15px;
@@ -206,24 +206,38 @@ footer {
     border-radius: 8px;
 }
 
-.forumario .detalle span {
+.formulario .detalle span{
     color: rgb(6, 45, 162);
     font-size: 17px;
 }
 
-.forumario .detalle p {
+.formulario .detalle p{
     margin: 6px 0;
     padding: 8px 10px;
     background-color: whitesmoke;
     border-left: 4px solid rgb(6, 45, 162);
 }
 
-.forumario button {
+.formulario button{
     margin-top: 25px;
     background-color: white;
     color: black;
 }
 
-.forumario button:hover {
+.formulario button:hover {
     background-color: wheat;
+}
+
+.foto-preview {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.foto-preview img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #0d6efd;
 }
