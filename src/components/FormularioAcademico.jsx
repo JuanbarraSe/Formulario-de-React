@@ -56,6 +56,7 @@ function Academico({persona, setPersona, anterior, siguiente}){
 
         if(persona.anio.trim() === ""){
             alert("Ingrese el año de graduación")
+            return;
         }
         
         if(siguiente){
